@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Mozaic's mark, kept in sync with src/components/MozaicMark.vue. -->
+  <defs>
+    <linearGradient id="p" gradientUnits="userSpaceOnUse" x1="0" y1="2" x2="0" y2="22">
+      <stop offset="0%" stop-color="hsl(120 86% 63%)"/>
+      <stop offset="100%" stop-color="hsl(145 100% 38%)"/>
+    </linearGradient>
+  </defs>
+  <path d="M2 12.6h8.4V21H2Z M12.6 12.6H21V21h-8.4Z M2 2h8.4v8.4H2Z" fill="url(#p)"/>
+  <path d="M14.2 0.6l8.6 1.8-1.8 8.6-8.6-1.8Z" fill="#f91690"/>
+</svg>

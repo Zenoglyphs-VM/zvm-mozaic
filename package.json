@@ -1,0 +1,42 @@
+{
+  "name": "zvm-mozaic",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mozaic, a shared million-pixel canvas on the ZVM. Paint any pixel any colour for 0.0001 ZNN. A static site that talks to whichever node you point it at.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "preview": "vite preview",
+    "contract:build": "node scripts/build-contract.mjs",
+    "deploy": "node scripts/deploy.mjs",
+    "test:contract": "node scripts/test-contract.mjs",
+    "test:router": "node scripts/test-router.mjs",
+    "mozaic": "node scripts/mozaic.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "@fontsource-variable/space-grotesk": "^5.2.5",
+    "viem": "^2.56.5",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^26.6.2",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^25.11.0",
+    "solc": "0.8.19",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.7.3",
+    "vite": "^7.3.1",
+    "vue-tsc": "^3.1.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
