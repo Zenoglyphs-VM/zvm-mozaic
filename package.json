@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "contract:build": "node scripts/build-contract.mjs",
     "deploy": "node scripts/deploy.mjs",
+    "test:isolated": "npm --prefix contracts/test test",
     "test:contract": "node scripts/test-contract.mjs",
     "test:router": "node scripts/test-router.mjs",
     "mozaic": "node scripts/mozaic.mjs",

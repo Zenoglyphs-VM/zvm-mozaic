@@ -30,6 +30,21 @@ stops without it), `VITE_ZVM_PRESETS` adds more to its picker, and the scripts
 read `ZVM_RPC` and `ANVIL_RPC`; `.env.example` has
 a local [zvm-devnet](https://github.com/Zenoglyphs-VM/zvm-devnet)'s.
 
+## Isolated contract tests
+
+With Node 22.18 or later, no RPC, wallet or submodule is needed:
+
+```sh
+npm ci --ignore-scripts --prefix contracts/test
+npm run test:isolated
+```
+
+The suite compiles current Solidity in memory, checks saved bytecode and ABI,
+and exercises canvas, payment, router encoding and session behavior on an
+isolated EVM. CI also rebuilds the contract artifacts and rejects drift. See
+[the test scope](contracts/test/README.md) for the model and integration limits.
+The existing fork and browser checks remain separate.
+
 ## Deploy
 
 Every push to `main` publishes to GitHub Pages (Settings, Pages, Source:
