@@ -9,6 +9,18 @@ permissions:
 
 # Linux, as most people who build this will be on.
 jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: contracts/test/package-lock.json
+      - run: npm ci --ignore-scripts --prefix contracts/test
+      - run: npm run test:isolated
+
   web:
     runs-on: ubuntu-latest
     steps:
@@ -22,6 +34,8 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - run: npm run contract:build
+      - run: git diff --exit-code -- contracts/Mozaic.json contracts/MozaicRouter.json src/core/abi.ts
       # The build refuses to run without its endpoints; the example has them.
       - run: cp .env.example .env
       - run: npm run typecheck
